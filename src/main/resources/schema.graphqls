@@ -9,8 +9,8 @@ type Query {
     message: String
     # 顾客
     customer(
-    #顾客名
-    name: String): Customer
+        #顾客名
+        name: String): Customer
 }
 
 type Mutation {
@@ -34,4 +34,13 @@ type Customer {
 type Cart {
     # 购物车产品列表
     products: [String]
+
+    # 购物车商品详情
+    inCartProducts: [Product]
+}
+
+# 商品信息
+type Product {
+    # 商品ID
+    id: String
 }
