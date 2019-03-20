@@ -2,10 +2,12 @@ package graphql.example.repository;
 
 import graphql.example.constraints.Cart;
 import graphql.example.constraints.Customer;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Repository
 public class CartRepository {
     private Map<String, Cart> carts = new HashMap<>();
 

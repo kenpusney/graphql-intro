@@ -7,14 +7,22 @@ schema {
 type Query {
     # 消息
     message: String
-    customer(name: String): Customer
+    # 顾客
+    customer(
+    #顾客名
+    name: String): Customer
 }
 
+# 顾客信息
 type Customer {
+    # 顾客名
     name: String
+    # 顾客购物车
     cart: Cart
 }
 
+# 购物车信息
 type Cart {
+    # 购物车产品列表
     products: [String]
 }

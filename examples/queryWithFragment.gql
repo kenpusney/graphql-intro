@@ -1,0 +1,12 @@
+{
+  customer(name: "Kimmy") {
+    name
+    ...cartInfo
+  }
+}
+
+fragment cartInfo on Customer {
+	cart {
+    products
+  }
+}
