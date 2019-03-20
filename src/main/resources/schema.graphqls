@@ -12,5 +12,9 @@ type Query {
 
 type Customer {
     name: String
+    cart: Cart
 }
 
+type Cart {
+    products: [String]
+}
