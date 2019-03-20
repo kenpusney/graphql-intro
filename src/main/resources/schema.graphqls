@@ -1,7 +1,7 @@
 
 schema {
     query: Query
-#    mutation: Mutation
+    mutation: Mutation
 }
 
 type Query {
@@ -11,6 +11,15 @@ type Query {
     customer(
     #顾客名
     name: String): Customer
+}
+
+type Mutation {
+    # 添加商品到购物车
+    addCartItem(
+        # 顾客名
+        customerName: String,
+        # 商品ID
+        productId: String): Cart
 }
 
 # 顾客信息
