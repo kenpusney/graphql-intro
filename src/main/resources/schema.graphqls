@@ -20,6 +20,9 @@ type Mutation {
         customerName: String,
         # 商品ID
         productId: String): Cart
+
+    # 清空购物车
+    clearCart(customerName: String): Cart
 }
 
 # 顾客信息
