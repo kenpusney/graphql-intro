@@ -7,4 +7,10 @@ schema {
 type Query {
     # 消息
     message: String
+    customer(name: String): Customer
 }
+
+type Customer {
+    name: String
+}
+
