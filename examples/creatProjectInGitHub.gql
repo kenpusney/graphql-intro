@@ -1,0 +1,9 @@
+# create new resource in github
+
+mutation createProject {
+  createProject(input: {ownerId: "MDQ6VXNlcjE1MDEzMzI=", name: "brand-new-project"}) {
+    project {
+      url
+    }
+  }
+}

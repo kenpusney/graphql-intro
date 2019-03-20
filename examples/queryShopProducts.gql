@@ -1,0 +1,25 @@
+# https://photoshop.casaba.com.tw/bff/graphiql
+
+query products {
+  shop {
+    name
+    products {
+      edges {
+        node {
+          title
+          listPrice {
+            amount
+          }
+          categories {
+            path
+            name
+          }
+          
+          promotions {
+            name
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    actuator-metrics: true
+  tools:
+    schema-location-pattern: "**/schema.graphqls"
+    # Enable or disable the introspection query. Disabling it puts your server in contravention of the GraphQL
+    # specification and expectations of most clients, so use this option with caution
+    introspection-enabled: true
+altair:
+  enabled: true
+  cdn:
+    enabled: false
+graphiql:
+  enabled: true
+  cdn:
+    enabled: false
+voyager:
+  enabled: true
+  cdn:
+    enabled: false
