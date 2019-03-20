@@ -18,6 +18,7 @@ import static org.mockito.Mockito.when;
 public class MutationResolverTest {
     private static final String CUSTOMER = "CUSTOMER";
     private static final String PRODUCT = "PRODUCT";
+    private final Customer customer = new Customer();
     @InjectMocks
     private MutationResolver resolver;
 
@@ -28,11 +29,20 @@ public class MutationResolverTest {
 
     @Test
     public void shouldAddProductSuccessfully() {
-        when(customerRepository.queryCustomer(CUSTOMER)).thenReturn(new Customer());
+        when(customerRepository.queryCustomer(CUSTOMER)).thenReturn(customer);
 
         resolver.addCartItem(CUSTOMER, PRODUCT);
 
         verify(customerRepository).queryCustomer(CUSTOMER);
-        verify(cartRepository).addProductIntoCart(any(), eq(PRODUCT));
+        verify(cartRepository).addProductIntoCart(customer, eq(PRODUCT));
+    }
+
+    @Test
+    public void shouldClearCart() {
+        when(customerRepository.queryCustomer(CUSTOMER)).thenReturn(customer);
+
+        resolver.clearCart(CUSTOMER);
+
+        verify(cartRepository).clearCart(customer);
     }
 }

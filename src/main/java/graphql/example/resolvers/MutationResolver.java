@@ -21,4 +21,8 @@ public class MutationResolver implements GraphQLMutationResolver {
                 customerRepository.queryCustomer(customerName),
                 productId);
     }
+
+    public Cart clearCart(String customerName) {
+        return cartRepository.clearCart(customerRepository.queryCustomer(customerName));
+    }
 }

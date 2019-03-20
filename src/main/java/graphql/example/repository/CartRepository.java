@@ -23,4 +23,11 @@ public class CartRepository {
 
         return cart;
     }
+
+    public Cart clearCart(Customer customer) {
+        Cart newCart = new Cart();
+        carts.put(customer.getName(), newCart);
+
+        return newCart;
+    }
 }
