@@ -1,4 +1,3 @@
-# https://photoshop.casaba.com.tw/bff/graphiql
 
 query products {
   shop {
