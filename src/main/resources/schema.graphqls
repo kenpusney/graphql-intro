@@ -47,3 +47,8 @@ type Product {
     # 商品ID
     id: String
 }
+
+
+extend type Query {
+    products(first: Int, after: String): ProductConnection @connection(for: "Product")
+}
