@@ -23,6 +23,9 @@ type Mutation {
 
     # 清空购物车
     clearCart(customerName: String): Cart
+
+    # 创建订单
+    createOrder(customerName: String): Order
 }
 
 # 顾客信息
@@ -31,6 +34,9 @@ type Customer {
     name: String
     # 顾客购物车
     cart: Cart
+
+    # 顾客订单列表
+    orders(filter: [String]): [Order]
 }
 
 # 购物车信息
@@ -48,7 +54,15 @@ type Product {
     id: String
 }
 
-
 extend type Query {
+    # 查询商品列表
     products(first: Int, after: String): ProductConnection @connection(for: "Product")
+}
+
+# 订单信息
+type Order {
+    # 订单号
+    id: String
+    # 订单
+    products: [Product]
 }
