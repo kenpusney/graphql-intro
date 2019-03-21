@@ -47,5 +47,5 @@ gradlew bootRun
 - GraphQL-Java https://github.com/graphql-java/graphql-java
 - GraphQL-Tools https://github.com/graphql-java-kickstart/graphql-java-tools
 - GraphQL-Braid https://bitbucket.org/atlassian/graphql-braid
-  - Example: https://github.com/Casaba-SEA-Partner/cs-java-starter
+
 - 196 maven central packages related to GraphQL https://search.maven.org/search?q=graphql
